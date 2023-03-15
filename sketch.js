@@ -9,13 +9,16 @@ const Composite = Matter.Composite;
 
 let engine;
 let world;
+var ground;
 
 function setup() 
 {
   createCanvas(500,700);
   engine = Engine.create();
   world = engine.world;
- 
+  
+  ground = new Ground(200,690,600,20);
+
   rectMode(CENTER);
   ellipseMode(RADIUS);
   textSize(50)
@@ -24,6 +27,7 @@ function setup()
 function draw() 
 {
   background(51);
+  ground.show();
   Engine.update(engine);
    
 }
